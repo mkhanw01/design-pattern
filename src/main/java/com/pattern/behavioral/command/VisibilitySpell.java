@@ -23,7 +23,9 @@ public class VisibilitySpell extends Command {
 
   @Override
   public void redo() {
-    undo();
+    if(target != null) {
+      target.setVisibility(Visibility.INVISIBLE);
+    }
   }
 
   @Override

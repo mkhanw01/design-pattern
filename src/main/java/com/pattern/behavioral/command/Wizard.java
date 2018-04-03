@@ -43,7 +43,7 @@ public class Wizard {
 
   public void redoLastSpell() {
     if(!redoStack.isEmpty()) {
-      Command previousSpell = undoStack.pollLast();
+      Command previousSpell = redoStack.pollLast();
       undoStack.offerLast(previousSpell);
       log.info(": {}, redo: {}", this, previousSpell);
       previousSpell.redo();
